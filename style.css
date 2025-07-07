@@ -1,0 +1,181 @@
+@charset "UTF-B";
+
+/*Reset da pagina*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Importando fontes externas*/
+@font-face{
+    font-family: 'akira';
+    src: url(fonts/akira_expanded/Akira\ Expanded\ Demo.otf) format('opentype');
+}
+
+@font-face{
+    font-family: 'bebas';
+    src: url(fonts/bebas_kai/Akira\ Expanded\ Demo.otf) format('opentype');
+}
+
+/*Criando variaveis*/
+:root{
+    --cor0: #3B4E5C;
+    --cor1: #404486;
+    --cor2: #1E2BDB;
+    --cor3: #1F8FDB;
+    --cor4: #DBB41F;
+    --cor5: #DBDA1F;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-nome: 'akira', cursive;
+    --fonte-titulos: 'bebas', cursive;
+}
+
+/*Definindo padrao de corpo*/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0px;
+    background-color: var(--cor0);
+}
+
+h2{
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*Stylo do cabeçalho*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor2));
+}
+
+.header img{
+    margin: 20px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 13px 0px rgba(255, 255, 255, 0.719);
+}
+
+.texto-cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+}
+
+.texto-cabecalho h1{
+    color: white;
+    font-family: var(--fonte-nome);
+    font-size: 1.5em;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.425);
+}
+
+.texto-cabecalho p{
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.5em;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.425);
+}
+
+/*Responsividade do cabecalho para telas menores*/
+@media (max-width: 750px){
+    .header{
+        flex-direction: column;
+    }
+    .header img{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+/*Stylo do menu de navegação*/
+nav{
+    text-align: center;
+    background-color: var(--cor2);
+    padding: 10px;
+    box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.322);
+}
+
+nav a{
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover{
+    background-color: var(--cor1);
+    color: var(--cor5);
+    transition-duration: 1s;
+}
+
+/*Stylo da folha de apresentação*/
+main{
+    min-width: 300px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 3px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.61);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    font-family: var(--fonte-titulos);
+    margin-bottom: 10px;
+}
+
+main p{
+    font-family: var(--fonte-padrao);
+    text-align: justify;
+    text-indent: 10px;
+}
+
+main abbr{
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--cor2);
+}
+
+main a:hover{
+    text-decoration: underline;
+}
+
+/*Stylo do rodape*/
+footer{
+    bottom: 0px;
+    background-color: var(--cor4);
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a{
+    font-family: var(--fonte-padrao);
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+

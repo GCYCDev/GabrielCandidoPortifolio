@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <!--Stylo gerado na pagina pois é exclusivo-->
+    <style>
+        .contato {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: rgb(243, 243, 243);
+            border-radius: 10px;
+            font-family: sans-serif;
+        }
+
+        .contato h2 {
+            text-align: center;
+            color: rgb(51, 51, 51);
+        }
+
+        .contato form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contato label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .contato input, .contato textarea {
+            padding: 10px;
+            border: 1px solid rgb(170, 170, 170);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contato button {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: rgb(0, 123, 255);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contato button:hover {
+            background-color: rgb(0, 86, 179);
+        }
+
+        .mensagem-sucesso {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 999;
+        }
+
+        .mensagem-sucesso.exibir {
+            display: block;
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--Cabeçalho de apresentação-->
+    <header class="header">
+        <img src="img/selfie.png" alt="foto de perfil">
+        <div class="texto-cabecalho">
+            <h1>Gabriel Candido Y Castro</h1>
+            <p>Bem Vindo ao Meu Portifolio!</p>
+        </div>
+    </header>
+    
+    <!--Menu de navegação-->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="formacao.html">FORMAÇÃO</a>
+        <a href="projetos.html">AREA TECH</a>
+        <a href="certificacoes.html">CV/TECNOLOGIAS</a>
+    </nav>
+
+    <!--Formulario-->
+    <section class="contato">
+        <h2>Entre em Contato</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="3" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <div id="msg-enviada" class="mensagem-sucesso">
+        ✔️ Mensagem enviada com sucesso!
+    </div>
+    
+    <!--Script de animação ao enviar a mensagem e retorno a pagina inicial-->
+    <script>
+        const form = document.querySelector('form');
+        const msg = document.getElementById('msg-enviada');
+
+        form.addEventListener('submit', function (e) {
+        e.preventDefault(); // evita envio real
+        msg.classList.add('exibir');
+
+        // espera 3 segundos e redireciona
+        setTimeout(() => {
+            window.location.href = 'index.html';
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

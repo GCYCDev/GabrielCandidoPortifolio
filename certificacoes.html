@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificações</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <!--Stylo gerado na pagina pois é exclusivo-->
+    <style>
+        .carrossel{
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: -1px 7px 20px 11px rgba(255, 255, 255, 0.61);
+        }
+
+        .carrossel h2{
+            color: white;
+            text-align: center;
+            text-shadow: 2px 3px 4px black;
+        }
+
+        .imagens{
+            display: flex;
+            width: fit-content;
+            animation: deslizar 12s linear infinite;
+        }
+
+        .imagens img{
+            width: 200px;
+            height: 250Px;
+            flex-shrink: 0;
+        }
+
+        @keyframes deslizar{
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-1200px);}
+        }
+
+        .cv-tech{
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 600px;
+
+        }
+
+        .cv{
+            width: 200px;
+            height: 300px;
+            box-shadow: -1px 7px 20px 11px rgba(255, 255, 255, 0.61);
+        }
+
+        .cv h2{
+            color: white;
+            text-align: center;
+            text-shadow: 2px 3px 4px black;
+        }
+
+        .cv img{
+            width: 200px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Cabeçalho de apresentação-->
+    <header class="header">
+        <img src="img/selfie.png" alt="foto de perfil">
+        <div class="texto-cabecalho">
+            <h1>Gabriel Candido Y Castro</h1>
+            <p>Bem Vindo ao Meu Portifolio!</p>
+        </div>
+    </header>
+    
+    <!--Menu de navegação-->
+    <nav>
+        <a href="index.html" >HOME</a>
+        <a href="formacao.html">FORMAÇÃO</a>
+        <a href="projetos.html">AREA TECH</a>
+        <a href="certificacoes.html" style="background-color: var(--cor1);
+    color: var(--cor5);">CV/TECNOLOLIAS</a>
+   </nav>
+
+   <!--Curriculo Virtual e tecnologias estudadas-->
+   <div class="cv-tech">
+        <a href="https://drive.google.com/file/d/1esV0A13xjUGSC4v119tdbudRW_gIt1z3/view?usp=sharing" target="_blank">
+            <div class="cv">
+                <h2>Curriculo Virtual</h2>
+                <img src="img/cv.jpg" alt="curriculo">
+            
+            </div>
+        </a>
+        <div class="carrossel">
+            <h2>Algumas tecnologias:</h2>
+            <div class="imagens" id="imagens">
+                <img src="img/carrossel1.jpg" alt="carrossel1">
+                <img src="img/carrossel2.jpg" alt="carrossel2">
+                <img src="img/carrossel3.jpg" alt="carrossel3">
+                <img src="img/carrossel4.jpg" alt="carrossel4">
+                <img src="img/carrossel5.jpg" alt="carrossel5">
+                <img src="img/carrossel6.jpg" alt="carrossel6">
+                <!--Clone para looping do carrossel-->
+                <img src="img/carrossel1.jpg" alt="carrossel1 clone">
+                <img src="img/carrossel2.jpg" alt="carrossel2 clone">
+                <img src="img/carrossel3.jpg" alt="carrossel3 clone">
+                <img src="img/carrossel4.jpg" alt="carrossel4 clone">
+                <img src="img/carrossel5.jpg" alt="carrossel5 clone">
+                <img src="img/carrossel6.jpg" alt="carrossel6 clone">
+            </div>
+        </div>
+    </div>
+
+   <!--Roda pé com meios de contato-->
+    <footer>
+        <a href="contato.html">Clique aqui para entrar em contato</a>
+    </footer>
+
+    <!--Script para animação do carrossel-->
+    <script>
+    const imagens = document.getElementById('imagens');
+    const total = imagens.children.length;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % total;
+      imagens.style.transform = `translateX(-${index * 200}px)`;
+    }, 900);
+  </script>
+</body>
+</html>

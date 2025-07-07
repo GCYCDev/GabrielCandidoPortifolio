@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Tech</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <!--Stylo gerado na pagina pois é exclusivo-->
+    <style>
+        .em-breve{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .aguard{
+        width: 200px;
+        height: 200px;
+        background-color: transparent;
+        border: 10px solid blue;
+        box-shadow: inset 0px -20px 20px 0px white;
+        border-top: 10px solid transparent;
+        border-radius: 50%;
+        animation: carregando 2s linear infinite
+        }
+
+        .text{
+            position: absolute;
+            display: flex;
+            color: white;
+            font-weight: bolder;
+            text-shadow: 1px 1px 3px rgb(0, 0, 0);
+        }
+
+        @keyframes carregando{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!--Cabeçalho de apresentação-->
+    <header class="header">
+        <img src="img/selfie.png" alt="foto de perfil">
+        <div class="texto-cabecalho">
+            <h1>Gabriel Candido Y Castro</h1>
+            <p>Bem Vindo ao Meu Portifolio!</p>
+        </div>
+    </header>
+    
+    <!--Menu de navegação-->
+    <nav>
+        <a href="index.html" >HOME</a>
+        <a href="formacao.html">FORMAÇÃO</a>
+        <a href="projetos.html" style="background-color: var(--cor1);
+    color: var(--cor5);">AREA TECH</a>
+        <a href="certificacoes.html">CV/TECNOLOGIAS</a>
+   </nav>
+
+   <!--Animação de Processo-->
+   <div class="em-breve">
+        <span class="aguard">
+        </span>
+        <p class="text">Projetos:<br>Em processo...</p>
+    </div>
+
+    <!--Roda pé com meios de contato-->
+    <footer>
+        <a href="contato.html">Clique aqui para entrar em contato</a>
+    </footer>
+    
+</body>
+</html>
